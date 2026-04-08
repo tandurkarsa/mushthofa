@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushthofa Kamal · CV Digital</title>
+    <link rel="icon" type="image/x-icon" href="favicon-cv.ico"> <!-- ganti dengan file favicon Anda -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #eef2f5;
+            color: #0f172a;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.12);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #1e2b3c, #0f172a);
+            padding: 2rem 2rem 1.5rem;
+            color: white;
+        }
+        .profile-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .profile-info h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .profile-info .tagline {
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-bottom: 1rem;
+        }
+        .age-box {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+            cursor: default;
+        }
+        .age-box:hover {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.02);
+        }
+        .age-box span {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-right: 6px;
+        }
+        .section {
+            padding: 1.8rem 2rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #0f172a;
+        }
+        .section-title i {
+            color: #2c6e9e;
+            font-size: 1.4rem;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .skill-tag {
+            background: #e6f0fa;
+            color: #1e4a76;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .skill-tag:hover {
+            background: #2c6e9e;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(44,110,158,0.2);
+        }
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            border-left: 3px solid #2c6e9e;
+            padding-left: 1.2rem;
+            transition: border-left 0.2s;
+        }
+        .timeline-item:hover {
+            border-left-width: 5px;
+        }
+        .timeline-item h3 {
+            font-weight: 700;
+        }
+        .timeline-date {
+            font-size: 0.8rem;
+            color: #475569;
+            margin-bottom: 0.3rem;
+        }
+        .achievement-grid, .org-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
+            gap: 1rem;
+        }
+        .achievement-card, .org-card {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .achievement-card:hover, .org-card:hover {
+            background: #ffffff;
+            border-color: #2c6e9e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        }
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .contact-links a, .copy-link-btn {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .contact-links a:hover, .copy-link-btn:hover {
+            color: #2c6e9e;
+            transform: translateX(3px);
+        }
+        @media (max-width: 700px) {
+            .section { padding: 1.2rem; }
+            .profile-info h1 { font-size: 1.8rem; }
+        }
+        .btn-print {
+            background: #2c6e9e;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.2s;
+        }
+        .btn-print:hover {
+            background: #1e4a76;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(44,110,158,0.3);
+        }
+        .fun-fact {
+            background: #f1f5f9;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-style: italic;
+            border-left: 3px solid #facc15;
+        }
+        .toast-msg {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e293b;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="header-bg">
+            <div class="profile-row">
+                <div class="profile-info">
+                    <h1>Mushthofa Kamal</h1>
+                    <div class="tagline">Mahasiswa Pendidikan Agama Islam | Teknisi & Kreatif</div>
+                    <div style="margin-top: 12px;">
+                        <i class="fas fa-map-marker-alt"></i> Yogyakarta (domisili) &nbsp;|&nbsp;
+                        <i class="fas fa-envelope"></i> muhmush...@gmail.com &nbsp;|&nbsp;
+                        <i class="fas fa-phone-alt"></i> 0812 4961 xxxx
+                    </div>
+                </div>
+                <div class="age-box" id="ageDisplay">
+                    <i class="fas fa-calendar-alt"></i> <span id="ageValue">--</span> tahun
+                    <div style="font-size:0.75rem; opacity:0.9;">per hari ini</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-user-graduate"></i> Tentang Saya</div>
+            <p>Saya adalah individu dengan latar belakang Pendidikan Agama Islam, namun memiliki ketertarikan besar di bidang teknik, audio, dan rekayasa elektronik. Kombinasi unik ini membuat saya mampu berpikir analitis sekaligus humanis. Saya aktif dalam organisasi kemahasiswaan dan keagamaan.</p>
+            <div class="fun-fact">
+                <i class="fas fa-lightbulb"></i> “Suka engineering tapi calon guru agama” — itulah saya.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-code"></i> Kemampuan & Tools</div>
+            <div class="skills-grid">
+                <span class="skill-tag">OBS & Live Streaming</span>
+                <span class="skill-tag">Audio Routing / Mixing</span>
+                <span class="skill-tag">Service Laptop (Software)</span>
+                <span class="skill-tag">Rekayasa Elektronik (Solder)</span>
+                <span class="skill-tag">MS Office / Google Workspace</span>
+                <span class="skill-tag">Dokumentasi & Operator Proyektor</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-graduation-cap"></i> Riwayat Pendidikan</div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025 - Sekarang</div>
+                <h3>S1 Pendidikan Agama Islam · Kelas C</h3>
+                <p>UIN Sunan Kalijaga Yogyakarta — Fakultas Ilmu Tarbiyah dan Keguruan</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2021 - 2024</div>
+                <h3>MAN 3 Jombang · Jurusan Agama · Kelas A</h3>
+                <p>Madrasah Aliyah Negeri 3 Jombang, Jawa Timur</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-trophy"></i> Prestasi & Sertifikasi</div>
+            <div class="achievement-grid">
+                <div class="achievement-card">📜 Sertifikat Hour of Code (Pemrograman Dasar)</div>
+                <div class="achievement-card">🤖 Sertifikat Robotik Event (Peserta aktif)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-users"></i> Organisasi & Pengalaman</div>
+            <div class="org-grid">
+                <div class="org-card">🏫 OSIS (Polisi Lalu Lintas/PLL) — MAN 3 Jombang</div>
+                <div class="org-card">🎥 MKV (Media Kreative Visual) — BOM Fakultas, UIN Suka (dokumentasi, live, operator proyektor)</div>
+                <div class="org-card">🕌 JRA (Jam'iyah Ruqyah Aswaja) & TQN (Tarekat Qadiriyah Naqsabandiyah)</div>
+                <div class="org-card">⚙️ Dalam proses bergabung dengan PMII (Pergerakan Mahasiswa Islam Indonesia)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><i class="fas fa-link"></i> Kontak & Portofolio</div>
+            <div class="contact-links">
+                <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="#"><i class="fas fa-envelope"></i> Email</a>
+                <button class="copy-link-btn" id="copyLinkBtn"><i class="fas fa-link"></i> Salin Link Halaman</button>
+            </div>
+            <button class="btn-print" onclick="window.print()"><i class="fas fa-print"></i> Cetak Halaman Ini</button>
+        </div>
+    </div>
+</div>
+<div id="toast" class="toast-msg">Link disalin ke clipboard!</div>
+
+<script>
+    // Hitung umur
+    function calculateAge(birthDate) {
+        const today = new Date();
+        let birth = new Date(birthDate);
+        let age = today.getFullYear() - birth.getFullYear();
+        const monthDiff = today.getMonth() - birth.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        return age;
+    }
+    document.getElementById('ageValue').innerText = calculateAge("2006-02-21");
+
+    // Salin link halaman
+    const copyBtn = document.getElementById('copyLinkBtn');
+    const toast = document.getElementById('toast');
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href);
+        toast.style.opacity = '1';
+        setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+    });
+</script>
+</body>
+</html>
